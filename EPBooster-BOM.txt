@@ -1,0 +1,43 @@
+Partlist
+
+Exported from EPBooster-V1.1.brd at 4/9/14 8:42 PM
+
+EAGLE Version 6.5.0 Copyright (c) 1988-2013 CadSoft
+
+Assembly variant: 
+
+Part     Value          Package   Library          Position (inch)       Orientation
+
++9/18V   +9V(T)         SQUARE    mb_supply        (1.9 1)               R0
+C1       0.047uF        075X040   mb_caps-chicklet (1.575 0.725)         R270
+C2       47uF           063_025   mb_caps-electro  (0.8 0.175)           R90
+C3       47uF           063_025   mb_caps-electro  (1.775 0.175)         R180
+C4       10uF           063_025   mb_caps-electro  (0.815 0.465)         R0
+C5       100uF          080_035_1 mb_caps-electro  (1.175 0.5)           R90
+C6       10uF           063_025   mb_caps-electro  (1.325 0.75)          R90
+C7       3300pF         075X040   mb_caps-chicklet (0.515 0.78)          R270
+C8       10uF           063_025   mb_caps-electro  (0.15 0.15)           R180
+C9       10uF           063_025   mb_caps-electro  (0.15 0.425)          R180
+D1       1N4148-3       DO35-3    mb_diodes        (1.9 0.725)           R90
+G        GND(T)         SQUARE    mb_supply        (0.075 1)             R0
+GAIN     C10k           POT       mb_pots          (1.4 0.975)           R180
+IN       IN(T)          SQUARE    mb_supply        (1.75 1)              R0
+LED      3mm            SQUARE    mb_supply        (1.95 0.075)          R0
+OUT      OUT(T)         SQUARE    mb_supply        (0.225 1)             R0
+Q1       2N5457         TO92-     mb_trans         (1.075 0.225)         R90
+Q2       2N5088         TO92-     mb_trans         (0.45 0.45)           R0
+R1       33K            R0207/3   mb_resistors     (1.785 0.37)          R0
+R2       8k2            R0207/3   mb_resistors     (1.425 0.1)           R180
+R3       1M             R0207/3   mb_resistors     (1.75 0.725)          R270
+R4       33K            R0207/3   mb_resistors     (1.53 0.47)           R180
+R5       1M             R0207/3   mb_resistors     (1.4 0.305)           R0
+R6       4k7            R0207/3   mb_resistors     (1.4 0.205)           R180
+R7       1K             R0207/3   mb_resistors     (0.94 0.695)          R0
+R8       15k            R0207/3   mb_resistors     (0.65 0.775)          R270
+R9       10k            R0207/3   mb_resistors     (0.475 0.075)         R180
+R10      10k            R0207/3   mb_resistors     (0.475 0.3)           R0
+R11      1M             R0207/3   mb_resistors     (0.475 0.19)          R0
+R12      10k            R0207/3   mb_resistors     (0.35 0.75)           R90
+R13      47k            R0207/3   mb_resistors     (0.1 0.75)            R90
+R14      100R           R0207/3   mb_resistors     (0.225 0.75)          R270
+SW1      DIP 2 POS      EDG-02    mb_dip switch    (0.96 0.885)          R90
