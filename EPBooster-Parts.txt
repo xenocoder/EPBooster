@@ -1,0 +1,43 @@
+Partlist
+
+Exported from EPBooster.brd at 11/20/2013 8:40:27 PM
+
+EAGLE Version 6.2.0 Copyright (c) 1988-2012 CadSoft
+
+Assembly variant: 
+
+Part     Value          Package  Library               Position (inch)       Orientation
+
++9/18V   +9V(T)         SQUARE   gm-supply             (1.9 0.975)           R0
+C1       0.047uF        075X040  gm-caps-film-chicklet (1.575 0.725)         R270
+C2       47uF           063_025  gm-caps-electro-pol   (0.85 0.175)          R90
+C3       47uF           063_025  gm-caps-electro-pol   (1.775 0.175)         R180
+C4       10uF           063_025  gm-caps-electro-pol   (0.815 0.465)         R0
+C5       100uF          063_025  gm-caps-electro-pol   (1.125 0.525)         R90
+C6       10uF           063_025  gm-caps-electro-pol   (1.325 0.75)          R90
+C7       3300pF         075X040  gm-caps-film-chicklet (0.515 0.78)          R270
+C8       10uF           063_025  gm-caps-electro-pol   (0.15 0.175)          R180
+C9       10uF           063_025  gm-caps-electro-pol   (0.15 0.45)           R180
+D1       1N4148-3       DO35-3   gm-diodes             (1.9 0.725)           R90
+G        GND(T)         SQUARE   gm-supply             (0.075 1)             R0
+GAIN     C10k           POT      gm-pots               (1.375 0.975)         R180
+IN       IN(T)          SQUARE   gm-supply             (1.75 0.975)          R0
+LED      3mm            SQUARE   gm-supply             (1.95 0.075)          R0
+OUT      OUT(T)         SQUARE   gm-supply             (0.225 1)             R0
+Q1       2N5457         TO92-    gm-trans              (1.15 0.225)          R90
+Q2       2N5088         TO92-    gm-trans              (0.45 0.45)           R0
+R1       33K            R0207/3  gm-resistors          (1.81 0.37)           R0
+R2       8k2            R0207/3  gm-resistors          (1.425 0.15)          R180
+R3       1M             R0207/3  gm-resistors          (1.75 0.725)          R270
+R4       33K            R0207/3  gm-resistors          (1.43 0.495)          R180
+R5       1M             R0207/3  gm-resistors          (1.425 0.38)          R0
+R6       4k7            R0207/3  gm-resistors          (1.42 0.265)          R180
+R7       1K             R0207/3  gm-resistors          (0.9 0.675)           R0
+R8       15k            R0207/3  gm-resistors          (0.675 0.775)         R270
+R9       10k            R0207/3  gm-resistors          (0.475 0.075)         R180
+R10      10k            R0207/3  gm-resistors          (0.475 0.3)           R0
+R11      1M             R0207/3  gm-resistors          (0.475 0.19)          R0
+R12      10k            R0207/3  gm-resistors          (0.35 0.775)          R90
+R13      47k            R0207/3  gm-resistors          (0.1 0.775)           R90
+R14      100R           R0207/3  gm-resistors          (0.225 0.775)         R270
+SW1      DIP 2 POS      EDG-02   special               (0.96 0.885)          R90
