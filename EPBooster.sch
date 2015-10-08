@@ -111,6 +111,30 @@
 <pad name="1" x="0" y="0" drill="1" diameter="2" shape="square"/>
 <text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
 </package>
+<package name="OCTOGON">
+<description>&lt;b&gt;Octogonal Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="octagon"/>
+<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="ROUND">
+<description>&lt;b&gt;Round Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 0.7 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2"/>
+<text x="1.27" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="LONG">
+<description>&lt;b&gt;Long Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 1 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="long"/>
+<text x="1.905" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
+<package name="OFFSET">
+<description>&lt;b&gt;Long Offset Pad&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;drill diameter 0.7 mm&lt;/li&gt;&lt;/ul&gt;</description>
+<pad name="1" x="0" y="0" drill="1" diameter="2" shape="offset"/>
+<text x="2.54" y="-0.635" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="+09V-1">
@@ -136,6 +160,14 @@
 <circle x="-1.27" y="0" radius="1.27" width="0.254" layer="94"/>
 <text x="0" y="5.08" size="1.778" layer="95" rot="R180">&gt;NAME</text>
 <pin name="IN" x="2.54" y="0" visible="off" length="short" direction="sup" rot="R180"/>
+</symbol>
+<symbol name="PAD">
+<wire x1="0" y1="1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="0" y2="-1.27" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.27" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.016" width="0.254" layer="94"/>
+<text x="0" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<pin name="PAD" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -218,6 +250,58 @@
 <device name="" package="SQUARE">
 <connects>
 <connect gate="G$1" pin="IN" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PAD" prefix="PAD" uservalue="yes">
+<description>&lt;b&gt;PAD&lt;/b&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;use this package for pads with any purpose, including input, output, send or return&lt;/li&gt;
+&lt;li&gt;various pad shapes:  round, square, octogonal, long, and long offset&lt;/li&gt;
+&lt;/ul&gt;</description>
+<gates>
+<gate name="G$1" symbol="PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SQUARE">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="8" package="OCTOGON">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="O" package="ROUND">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="L" package="LONG">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="OFF" package="OFFSET">
+<connects>
+<connect gate="G$1" pin="PAD" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1979,13 +2063,12 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 </classes>
 <parts>
 <part name="+9/18V" library="mb_supply" deviceset="+9V(T)" device=""/>
-<part name="G" library="mb_supply" deviceset="GND(T)" device=""/>
+<part name="GND" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="D1" library="mb_diodes" deviceset="1N4148" device="-3"/>
 <part name="C5" library="mb_caps-electro" deviceset="063" device="1" value="100uF"/>
 <part name="C1" library="mb_caps-box" deviceset="072X025" device="2" value="0.047uF"/>
 <part name="C7" library="mb_caps-box" deviceset="072X025" device="2" value="3300pF"/>
 <part name="GND2" library="gm-supply" deviceset="GND" device=""/>
-<part name="GND3" library="gm-supply" deviceset="GND" device=""/>
 <part name="GND4" library="gm-supply" deviceset="GND" device=""/>
 <part name="GND5" library="gm-supply" deviceset="GND" device=""/>
 <part name="GND6" library="gm-supply" deviceset="GND" device=""/>
@@ -2020,8 +2103,9 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <part name="C6" library="mb_caps-electro" deviceset="050" device="1" value="10uF"/>
 <part name="C8" library="mb_caps-electro" deviceset="050" device="1" value="10uF"/>
 <part name="C9" library="mb_caps-electro" deviceset="050" device="1" value="10uF"/>
-<part name="LED" library="mb_diodes" deviceset="LED" device="3MM" value="3MM"/>
-<part name="GND1" library="gm-supply" deviceset="GND" device=""/>
+<part name="LED3MM" library="mb_diodes" deviceset="LED" device="3MM" value="3MM"/>
+<part name="LED" library="mb_supply" deviceset="PAD" device=""/>
+<part name="G" library="mb_supply" deviceset="GND(T)" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2029,13 +2113,12 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 </plain>
 <instances>
 <instance part="+9/18V" gate="+9V" x="-5.08" y="76.2" rot="R90"/>
-<instance part="G" gate="GND" x="20.32" y="60.96"/>
+<instance part="GND" gate="GND" x="20.32" y="60.96"/>
 <instance part="D1" gate="G$1" x="7.62" y="76.2"/>
 <instance part="C5" gate="G$1" x="73.66" y="50.8" rot="R90"/>
 <instance part="C1" gate="G$1" x="12.7" y="43.18" rot="R90"/>
 <instance part="C7" gate="G$1" x="129.54" y="63.5" rot="R90"/>
 <instance part="GND2" gate="GND" x="50.8" y="86.36"/>
-<instance part="GND3" gate="GND" x="2.54" y="20.32"/>
 <instance part="GND4" gate="GND" x="137.16" y="58.42"/>
 <instance part="GND5" gate="GND" x="165.1" y="58.42"/>
 <instance part="GND6" gate="GND" x="195.58" y="15.24"/>
@@ -2070,8 +2153,9 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <instance part="C6" gate="1" x="73.66" y="38.1" rot="R90"/>
 <instance part="C8" gate="1" x="157.48" y="63.5" rot="R90"/>
 <instance part="C9" gate="1" x="185.42" y="38.1" rot="R90"/>
-<instance part="LED" gate="G$1" x="66.04" y="99.06" rot="R180"/>
-<instance part="GND1" gate="GND" x="76.2" y="99.06" rot="R90"/>
+<instance part="LED3MM" gate="G$1" x="66.04" y="99.06" rot="R180"/>
+<instance part="LED" gate="G$1" x="83.82" y="99.06"/>
+<instance part="G" gate="GND" x="2.54" y="20.32"/>
 </instances>
 <busses>
 </busses>
@@ -2091,15 +2175,10 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <wire x1="50.8" y1="99.06" x2="60.96" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="96.52" x2="50.8" y2="99.06" width="0.1524" layer="91"/>
 <junction x="50.8" y="99.06"/>
-<pinref part="LED" gate="G$1" pin="A"/>
+<pinref part="LED3MM" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="GND" class="0">
-<segment>
-<pinref part="GND3" gate="GND" pin="GND"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="2.54" y1="22.86" x2="2.54" y2="27.94" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="GND8" gate="GND" pin="GND"/>
 <pinref part="R5" gate="G$1" pin="2"/>
@@ -2141,7 +2220,7 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <wire x1="109.22" y1="30.48" x2="109.22" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="G" gate="GND" pin="GND"/>
+<pinref part="GND" gate="GND" pin="GND"/>
 <pinref part="C2" gate="1" pin="-"/>
 <wire x1="20.32" y1="63.5" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -2156,9 +2235,9 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <wire x1="165.1" y1="63.5" x2="165.1" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LED" gate="G$1" pin="C"/>
-<pinref part="GND1" gate="GND" pin="GND"/>
-<wire x1="68.58" y1="99.06" x2="73.66" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="G" gate="GND" pin="GND"/>
+<wire x1="2.54" y1="22.86" x2="2.54" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -2336,6 +2415,13 @@ MKP2 63, 100V: 1000pF - 0.015uF; MKS2 50V: 0.33 - 0.47uF; 63V: 1000pF - 0.22uF;<
 <pinref part="C4" gate="1" pin="-"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="63.5" x2="68.58" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="LED" gate="G$1" pin="PAD"/>
+<pinref part="LED3MM" gate="G$1" pin="C"/>
+<wire x1="81.28" y1="99.06" x2="68.58" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
